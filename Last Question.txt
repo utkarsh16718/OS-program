@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+     char meminfo;
+        FILE *fp=fopen("/proc/meminfo","r");
+        if(fp==NULL){
+                fprintf(stderr,"Error opening file\n");}
+        else{
+                while((meminfo=fgetc(fp))!=EOF){
+                printf("%c",meminfo);
+}
+fclose(fp);
+}return 0;
+
+}
